@@ -1,0 +1,28 @@
+{"dorms": [
+  {
+   "name": {"common": "bar-h", "official": "Burdett Avenue Residence Hall"},
+   "address": "2122 Burdett Ave, Troy, NY 12180",
+   "dining hall": true,
+   "room-types": ["single", "double", "tripple", "quad"],
+   "price": 3,
+   "shuttle-stop": true,
+   "class": ["freshman", "sophomore"],
+   "bathroom": "4-1",
+   "kitchen": "floor",
+   "floors": 5,
+   "ratings": [1,4,4.6,2,3]
+  },
+  {
+   "name": {"common": "blitman", "official": "Blitman Commons"},
+   "address": "1800 6th Ave, Troy, NY 12180",
+   "dining hall": true,
+   "room-types": ["single", "double"],
+   "price": 5,
+   "shuttle-stop": true,
+   "class": ["sophomore"],
+   "bathroom": "2-1",
+   "kitchen": "floor",
+   "floors": 3,
+   "ratings": [1,1,4.6,2,3,1,2,2,2,2]
+  }
+]}
