@@ -63,8 +63,8 @@ app.get('/login', (req, res) => {
       let users = JSON.parse(data);
       for (let i=0; i<users.length; ++i) {
         let user = users[i];
-        console.log(user);
-        console.log(req.query.uname)
+        // console.log(user);
+        // console.log(req.query.uname)
         if (user.username == req.query.uname && user.password == req.query.pass) {
           // user found successfully
           res.status(200).json({"logged": true, "username": user.username});
