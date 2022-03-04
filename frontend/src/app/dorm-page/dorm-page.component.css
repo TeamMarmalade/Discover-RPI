@@ -1,0 +1,40 @@
+.slideshow {
+    width: 100%;
+    min-height: 45vh;
+    height: fit-content;
+}
+
+.slides {
+    width: 32vw;
+}
+
+.block {
+    display: block;
+}
+
+.fade {
+    animation: fade 6s linear forwards;
+}
+
+@keyframes fade {
+  0%, 100% { opacity: 0; }
+  25% { opacity: 1; }
+  75% { opacity: 1; }
+}
+
+.bg-grey {
+    background-color: lightgray;
+}
+
+.rooms {
+    text-align: center;
+    width: 15vw;
+}
+
+.no-b {
+    list-style-type: none;
+}
+
+.text {
+    font-size: 18px;
+}

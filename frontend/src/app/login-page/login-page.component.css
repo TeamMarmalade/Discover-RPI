@@ -1,0 +1,160 @@
+.login {
+  
+  display: flex;
+  justify-content: center;
+
+  
+  text-align: center;
+  font-family: 'Roboto', 'Cyrillic', sans-serif;
+  margin-bottom: 3%;
+}
+
+
+.main_img {
+  width: 55%;
+  margin-bottom: 10%;
+}
+
+
+.main_img_2 {
+  width: 55%;
+  margin-bottom: 15%;
+}
+
+.login h1{
+  font-size: 32px;
+}
+
+
+.login h4{
+  
+  margin-bottom: 2%;
+  font-size: 20px;
+}
+
+
+.login a{
+  
+  color: #55D5FF;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.login a:hover{
+  color: #55D5FF;
+}
+
+
+.login .login-form {
+  
+  text-align: left;
+  
+  width: 125%;
+  
+  margin: -5% 0 5% -12.5%;
+}
+
+
+.login-form {
+  
+  text-align: left;
+  
+  width: 80%;
+  
+  margin: -2% auto 2% auto;
+}
+
+
+.login-form .inline-fields {
+  
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2%;
+}
+
+
+.login-form .fix-margin {
+  
+  margin-right: -1%;
+}
+
+
+.login-form .inline-fields div {
+  width: 45%;
+}
+
+
+.login-form label {
+  font-size: 13px;
+}
+
+
+.login-form input[type=text],
+input[type=password],
+input[type=date],
+select {
+  width: 100%;
+  display: block;
+  border: 1px solid #a1a1a1;
+  margin: 1% 0 4% 0;
+  height: 5vh;
+  padding: 5px;
+  font-size: 14px;
+}
+
+
+.login-form input[type=date]::-webkit-datetime-edit {
+  font-family: 'Roboto', 'Cyrillic', sans-serif;
+  padding: 1%;
+}
+
+
+.login-form input[type=file] {
+  margin: 1% 0 4% 0;
+  font-family: 'Roboto', 'Cyrillic', sans-serif;
+  font-size: 14px;
+}
+
+
+.login-form input[type=file]::-webkit-file-upload-button {
+  
+  background-color: #b92500;
+  color: white;
+  border: 2px solid #b92500;
+  
+  height: 4.25vh;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+
+.login-form input[type=file]::-webkit-file-upload-button:hover {
+  background-color: #b92500;
+}
+
+.login-form input[type=file]::-webkit-file-upload-button:active {
+  background-color: #b92500;
+}
+
+
+.login-form input[type=submit] {
+  width: 40%;
+  margin: 5% 30%;
+  color: white;
+  background-color: #b92500;
+  height: 8vh;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+
+.login-form input[type=submit]:hover {
+  background-color: #b92500;
+}
+
+
+.login-form .required:after {
+  content: " *";
+  color: red;
+}

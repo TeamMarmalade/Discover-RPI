@@ -77,6 +77,7 @@ padding: 1%;
 
 #rooms, #included {
 background-color: lightgray;
+width: fit-content;
 }
 
 #included h3 {

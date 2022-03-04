@@ -5,7 +5,7 @@ export interface Dorm {
         official: string
     },
     address: string,
-    dining_hall: boolean,
+    dining_hall: string,
     room_types: string[],
     price: number,
     shuttle_stop: boolean,
@@ -13,5 +13,11 @@ export interface Dorm {
     bathroom: string,
     kitchen: string,
     floors: number,
-    ratings: number[]
+    ratings: number[],
+    image: string[],
+    reviews: {
+        user: string,
+        msg: string,
+        stars: number
+    }[]
 }

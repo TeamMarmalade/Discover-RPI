@@ -1,0 +1,16 @@
+.logo {
+    width: 6%;
+}
+
+.no-b {
+    list-style-type: none;
+}
+
+a {
+    text-decoration: none;
+    color: grey;
+}
+
+.w-85 {
+    width: 92%;
+}
