@@ -1,1 +1,26 @@
-<p>dorm-page works!</p>
+<div *ngIf="dorm != null">
+    <h1 id="title">{{ dorm.name.official }}</h1>
+    <img class="dorm-image" src="black bg.jpg" alt="Image" width="400" height="200">
+    <div id="dorm-details">
+        <div id="rooms">
+            <h3>Types of Rooms</h3>
+            <p>Singles: {{ 'v' }}</p>
+            <p>Doubles: $$$</p>
+        </div>
+        <div id="included">
+            <h3>Included</h3>
+            <ul>
+                <li>A/C</li>
+                <li>Laundry Machines</li>
+                <li>Ethernet</li>
+            </ul>
+        </div>
+        <div id="dining-hall">
+            <h3>Dining Hall: RSDH</h3>
+        </div>
+    </div>
+    <hr>
+    <div id="reviews">
+        <h2>Reviews</h2>
+    </div>
+</div>

@@ -1,0 +1,20 @@
+{
+  "name": "discover",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "cd frontend && ng build --output-path ../backend/dist/frontend && cd ../backend && npm run start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TeamMarmalade/Discover-RPI.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TeamMarmalade/Discover-RPI/issues"
+  },
+  "homepage": "https://github.com/TeamMarmalade/Discover-RPI#readme"
+}

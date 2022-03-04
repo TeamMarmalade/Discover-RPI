@@ -1,17 +1,17 @@
 export interface Dorm {
-    retrieved: Boolean,
-    name?: {
-        common: String, 
-        official: String
+    retrieved: boolean,
+    name: {
+        common: string, 
+        official: string
     },
-    address?: String,
-    dining_hall?: Boolean,
-    room_types?: String[],
-    price?: Number,
-    shuttle_stop?: Boolean,
-    class?: String[],
-    bathroom?: String,
-    kitchen?: String,
-    floors?: Number,
-    ratings?: Number[]
+    address: string,
+    dining_hall: boolean,
+    room_types: string[],
+    price: number,
+    shuttle_stop: boolean,
+    class: string[],
+    bathroom: string,
+    kitchen: string,
+    floors: number,
+    ratings: number[]
 }

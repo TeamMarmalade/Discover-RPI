@@ -1,5 +1,6 @@
 // server init + mods
 var app = require('express')();
+var express = require('express');
 var http = require('http').Server(app);
 const axios = require('axios').default;
 const fs = require('fs');
@@ -15,22 +16,17 @@ fs.readFile('./dorms.json', 'utf8', (err, data) => {
   }
 });
 
-
-
-
-// server main route handler
-app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
-});
+// Load static
+app.use(express.static(__dirname + '/dist/frontend'));
 
 // server dorm route handler
 app.get('/dorms', (req, res) => {
-  var arr = [];
-  for(var key in dorms["dorms"]) {
-    var dorm = dorms["dorms"][key];
-    arr.push(dorm["name"]);
-  }
-  res.status(200).json({"dorms": arr})
+  // var arr = [];
+  // for(var key in dorms["dorms"]) {
+  //   var dorm = dorms["dorms"][key];
+  //   arr.push(dorm["name"]);
+  // }
+  res.status(200).json({"dorms": dorms["dorms"]})
 });
 
 // server dorm item route handler
@@ -55,6 +51,11 @@ app.delete('/dorms/reviews/:id', (req, res) => {
   res.status(200).json({
     "removed": true
   })
+});
+
+// server main route handler
+app.get('/*', function(req, res) {
+  res.sendFile(__dirname + '/dist/frontend/index.html');
 });
 
 // start server

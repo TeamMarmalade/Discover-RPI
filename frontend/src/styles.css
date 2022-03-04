@@ -1,1 +1,88 @@
-/* You can add global styles to this file, and also import other style files */
+#dorms {
+list-style-type: none;
+width: 50%;
+margin: 3% auto 0 auto;
+}
+
+.dorm {
+background-color: lightgray;
+margin-bottom: 1%;
+border-radius: 10px;
+padding: 1% 1% 0.5% 1%;
+}
+
+.dorm img {
+float: right;
+margin-right: 5%;
+margin-top: 1%;
+}
+
+.dorm p {
+margin-top: 0;
+font-weight: 600;
+}
+
+#login-content {
+text-align: center;
+}
+
+input {
+margin-bottom: 1%;
+}
+
+input[type="text"], input[type="password"] {
+width: 20%;
+border: 2px solid black;
+height: 17px;
+}
+
+input[type="submit"], button {
+cursor: pointer;
+}
+
+#submit-login {
+margin-top: 1%;
+width: 7.5%;
+padding: 0.5%;
+border: none;
+background-color: lightgray;
+}
+
+#submit-login:hover {
+background-color: rgb(187, 187, 187);
+}
+
+#login-content #title {
+margin-top: 3%;
+}
+
+#login-content #logo {
+margin-top: 5%;
+}
+
+#dorm-content {
+text-align: center;
+}
+
+#dorm-details {
+display: flex;
+width: 50%;
+margin: 1% 0 2% 27.5%;
+}
+
+#dorm-details div {
+margin-right: 10%;
+padding: 1%;
+}
+
+#rooms, #included {
+background-color: lightgray;
+}
+
+#included h3 {
+margin-left: -30%;
+}
+
+#included li {
+text-align: left;
+}
