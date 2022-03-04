@@ -1,7 +1,7 @@
 # Running the App
 In the frontend directory in one terminal run: 
 ```
-ng build --watch --output-dir ../backend/dist/frontend
+ng build --watch --output-path ../backend/dist/frontend
 ```
 
 In the backend directory in another terminal run:
