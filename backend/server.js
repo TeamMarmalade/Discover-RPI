@@ -104,10 +104,36 @@ app.get('/dorms/:dorm', (req, res) => {
   res.status(404).send();
 });
 
-app.put('/dorms/reviews/:id', (req, res) => {
-  res.status(200).json({
-    "added": true
-  })
+app.post('/dorms/:dorm/reviews', (req, res) => {
+  if (!(req.query.hasOwnProperty("comment") && req.query.hasOwnProperty("uname") && Object.keys(req.query).length == 2)) {
+    // query string /dorms/:dorm/reviews?comment=ThisDormIsGood
+    // if that isn't there^
+    res.status(400).send();
+    return;
+  } else {
+    for (var key in dorms["dorms"]) {
+      var dorm = dorms["dorms"][key];
+      if (dorm.name.common === req.params.dorm || dorm.name.official === req.params.dorm) {
+        fs.readFile(__dirname + "/dorms.json", 'utf-8', function(err, data){
+          if (err) {console.log(`Error reading file from disk: ${err}`); res.status(500).send();}
+          let dorms = JSON.parse(data);
+          // overwrites last comment for now
+          dorms["dorms"][key]["reviews"][req.query.uname] = req.query.comment;
+          dorms = JSON.stringify(dorms);
+          fs.writeFile(__dirname + "/dorms.json", dorms, 'utf-8', function (err) {
+            if (err) {console.log(`Error writing file to disk: ${err}`); res.status(500).send();}
+            console.log('dorm review updated successfully');
+            res.status(200).send();
+            return;
+          });
+        });
+      } else if (key == dorms["dorms"].length - 1) {
+        // res.status(404).send();
+        // return;
+      }
+    }
+  }
+  
 });
 
 app.delete('/dorms/reviews/:id', (req, res) => {
