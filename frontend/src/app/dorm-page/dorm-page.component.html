@@ -1,26 +1,40 @@
-<div *ngIf="dorm != null">
-    <h1 id="title">{{ dorm.name.official }}</h1>
-    <img class="dorm-image" src="black bg.jpg" alt="Image" width="400" height="200">
-    <div id="dorm-details">
-        <div id="rooms">
-            <h3>Types of Rooms</h3>
-            <p>Singles: {{ 'v' }}</p>
-            <p>Doubles: $$$</p>
+<div *ngIf="dorm != null" class="">
+    <h1 class="text-center mt-4 display-4">{{ dorm.name.official }}</h1>
+    <div class="slideshow d-flex justify-content-center mt-5 mb-4">
+        <div class="fade" [ngStyle]="{ 'display': slides[0] }">
+            <img [src]="img[0]" class="slides shadow">
         </div>
-        <div id="included">
+        <div class="fade" [ngStyle]="{ 'display': slides[1] }">
+            <img [src]="img[1]" class="slides shadow">
+        </div>
+    </div>
+
+    <div class="d-flex justify-content-around">
+        <div class="bg-grey rooms shadow">
+            <h3>Room Types</h3>
+            <div *ngFor="let type of dorm.room_types">
+                <p>{{ type }}: ✅</p>
+            </div>
+        </div>
+        <div class="bg-grey rooms shadow">
             <h3>Included</h3>
-            <ul>
-                <li>A/C</li>
-                <li>Laundry Machines</li>
-                <li>Ethernet</li>
-            </ul>
+            <p>A/C</p>
+            <p>Laundry Machines</p>
+            <p>Ethernet</p>
         </div>
-        <div id="dining-hall">
-            <h3>Dining Hall: RSDH</h3>
+        <div class="bg-grey rooms shadow">
+            <h3>Dining Hall:</h3>
+            <h3>{{ dorm['dining_hall'] }}</h3>
         </div>
     </div>
     <hr>
-    <div id="reviews">
-        <h2>Reviews</h2>
+    <div class="reviews p-2">
+        <h2 class="display-7">Reviews</h2>
+        <ul class="no-b">
+            <li *ngFor="let review of dorm.reviews">
+                <p class="h3">{{ review.user }}: ⭐ {{ review.stars }}</p>
+                <p class="text">{{ review.msg }}</p>
+            </li>
+        </ul>
     </div>
 </div>

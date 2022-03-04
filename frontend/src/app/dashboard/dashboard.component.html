@@ -1,11 +1,12 @@
-<img id="logo" src="black bg.jpg" alt="Logo" width="150" height="50">
-
 <ul id="dorms">
-    <li *ngFor="let dorm of dorms">
-        <div class="dorm" *ngIf="dorm.retrieved" (click)="navigate(dorm.name.common)">
-            {{ dorm.name.official }}
-            <img class="dorm-icon" src="" alt="Icon" />
-            <p class="stars">✰ {{ getAverageRating(dorm) }}</p>
+    <li *ngFor="let dorm of dorms" class="pointer">
+        <div class="w-100 my-4 dorm d-flex justify-content-between" *ngIf="dorm.retrieved"
+            (click)="navigate(dorm.name.common)">
+            <div>
+                <h5>{{ dorm.name.official }}</h5>
+                <p>{{ dorm.name.common.charAt(0).toUpperCase() + dorm.name.common.slice(1) }}</p>
+            </div>
+            <p class="stars">⭐ {{ getAverageRating(dorm) }}</p>
         </div>
     </li>
 </ul>

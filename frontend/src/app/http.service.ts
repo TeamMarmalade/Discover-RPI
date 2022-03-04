@@ -12,4 +12,8 @@ export class HttpService {
   get(url: string) {
     return this.http.get(url);
   }
+
+  post(url: string, body: {}) {
+    return this.http.post(url, body);
+  }
 }
