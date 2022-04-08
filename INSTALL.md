@@ -1,5 +1,4 @@
 # Setup the Database
-Mongo:
 1. Create a Mongo database in Mongo Atlas.
 2. Create a "dorms" collection.
 3. Import ```dorms.json``` (from the repository) into the "dorms" collection using the web interface.
