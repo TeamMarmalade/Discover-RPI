@@ -6,9 +6,9 @@
 5. Import ```reviews.json``` (from the repository) into the "reviews" collection using the web interface.
 
 # Installing the App
-Clone the repository. (using ```git clone```)
-```cd``` into the repository and run ```npm i```.
-```cd``` into the root of the Angular directory (```frontend```) in the repository and run ```npm i```.
+1. Clone the repository (using ```git clone```)
+2. ```cd``` into the repository and run ```npm i```.
+3. ```cd``` into the root of the Angular directory (```frontend```) in the repository and run ```npm i```.
 
 # Running the App
 In the ```frontend``` directory of the repository in one terminal run: 
