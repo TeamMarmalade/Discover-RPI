@@ -158,3 +158,15 @@ select {
   content: " *";
   color: red;
 }
+
+
+#google-login-button, #google-logout-button {
+  width: 60%;
+  margin: 5% 20%; 
+}
+
+
+#welcome-user-text {
+  text-align: center;
+  margin-top: 5%;
+}
