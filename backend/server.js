@@ -174,27 +174,60 @@ app.put('/dorms/:dorm/reviews/:user', (req, res) => {
     if (err) { throw err }
     let db = client.db("DiscoverRPI").collection("reviews");
     db.findOne({_id : req.params.dorm }, function(err, re) {
-      if (err) { res.status(500).send(); console.log(err); } 
+      if (err) { res.status(500).send(); console.log(err); client.close(); return; } 
       let user = req.params.user;
       if (re.hasOwnProperty(user)) {
         // review exists
-        res.status(200).json(re[user]);
+        db.updateOne({_id : req.params.dorm }, {$set: {user: req.body}}, function(err, r) {
+          if (err) { res.status(500).send(); console.log(err); client.close(); return; }
+          res.status(200).json(r);
+        });
       } else {
         res.status(404).send("review on specified dorm and user not found");
+        client.close();
+        return;
       }
-      
-      client.close();
     });
   });
 });
 
 app.post('/dorms/:dorm/reviews', (req, res) => {
-  // if (!(req.query.hasOwnProperty("comment") && req.query.hasOwnProperty("uname") && Object.keys(req.query).length == 2)) {
-  //   // query string /dorms/:dorm/reviews?comment=ThisDormIsGood
-  //   // if that isn't there^
-  //   res.status(400).send();
-  //   return;
+  // request body:
+  // {
+  //   "user": "test-user",
+  //   "content": "great dorm",
+  //   "stars": 5,
+  //   "upvotes": ["user1", "user2"]
   // }
+  if (!(Object.keys(req.body).length == 4 && req.body.hasOwnProperty("content") && req.body.hasOwnProperty("stars") && req.body.hasOwnProperty("upvotes")&& req.body.hasOwnProperty("user"))) {
+    res.status(400).send("Request body in wrong json format");
+    return;
+  }
+
+  client.connect(err => {
+    if (err) { throw err }
+    let db = client.db("DiscoverRPI").collection("reviews");
+    db.findOne({_id : req.params.dorm }, function(err, re) {
+      if (err) { res.status(500).send(); console.log(err); client.close(); return; } 
+      let user = req.body.user;
+      if (re.hasOwnProperty(user)) {
+        console.log("user " + user + " already has a review");
+        // review already exists
+        res.status(400).send("This user already has a review for this dorm");
+      } else {
+        // review does not exist
+        // create review format
+        let update = {};
+        update[user] = req.body;
+        delete update[user]["user"];
+        // post review
+        db.updateOne({_id : req.params.dorm }, {$set: update}, function(err, r) {
+          if (err) { res.status(500).send(); console.log(err); client.close(); return; }
+          res.status(200).json(r);
+        });
+      }
+    });
+  });
 
 });
 
