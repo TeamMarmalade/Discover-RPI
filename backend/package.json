@@ -3,7 +3,7 @@
     "axios": "^0.26.1",
     "express": "^4.17.3",
     "init": "^0.1.2",
-    "mongodb": "^4.4.1"
+    "mongodb": "^4.5.0"
   },
   "scripts": {
     "start": "node server.js"

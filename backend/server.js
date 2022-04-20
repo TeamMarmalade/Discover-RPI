@@ -4,11 +4,17 @@ var express = require('express');
 var http = require('http').Server(app);
 const axios = require('axios').default;
 const fs = require('fs');
+const bodyParser = require('body-parser');
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 
-//MongoImplementation
+// Mongo Implementation
+// mongodb+srv://user1:User123@cluster0.neiqy.mongodb.net/test
 var dorms;
 const { MongoClient, ServerApiVersion } = require('mongodb');
+const uri = "mongodb+srv://user_x:TeamMarmalade@cluster0.neiqy.mongodb.net/Cluster0?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
+
 client.connect(err => {
   if (err) { throw err; }
   //dorms = client.db("DiscoverRPI").collection("dorms").findAll({});
@@ -153,10 +159,33 @@ app.get('/dorms/:dorm/reviews', (req, res) => {
   });
 });
 
-app.put('/dorms/reviews/:id', (req, res) => {
-  res.status(200).json({
-    "added": true
-  })
+app.put('/dorms/:dorm/reviews/:user', (req, res) => {
+  // request body:
+  // {
+  //   "content": "great dorm",
+  //   "stars": 5,
+  //   "upvotes": ["user1", "user2"]
+  // }
+  if (!(req.body != null && Object.keys(req.body).length == 3 && req.body.hasOwnProperty("content") && req.body.hasOwnProperty("stars") && req.body.hasOwnProperty("upvotes"))) {
+    res.status(400).send("Request body in wrong json format");
+    return;
+  }
+  client.connect(err => {
+    if (err) { throw err }
+    let db = client.db("DiscoverRPI").collection("reviews");
+    db.findOne({_id : req.params.dorm }, function(err, re) {
+      if (err) { res.status(500).send(); console.log(err); } 
+      let user = req.params.user;
+      if (re.hasOwnProperty(user)) {
+        // review exists
+        res.status(200).json(re[user]);
+      } else {
+        res.status(404).send("review on specified dorm and user not found");
+      }
+      
+      client.close();
+    });
+  });
 });
 
 app.post('/dorms/:dorm/reviews', (req, res) => {
@@ -165,28 +194,6 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
   //   // if that isn't there^
   //   res.status(400).send();
   //   return;
-  // } else {
-  //   for (var key in dorms["dorms"]) {
-  //     var dorm = dorms["dorms"][key];
-  //     if (dorm.name.common === req.params.dorm || dorm.name.official === req.params.dorm) {
-  //       fs.readFile(__dirname + "/dorms.json", 'utf-8', function(err, data){
-  //         if (err) {console.log(`Error reading file from disk: ${err}`); res.status(500).send();}
-  //         let dorms = JSON.parse(data);
-  //         // overwrites last comment for now
-  //         dorms["dorms"][key]["reviews"][req.query.uname] = req.query.comment;
-  //         dorms = JSON.stringify(dorms);
-  //         fs.writeFile(__dirname + "/dorms.json", dorms, 'utf-8', function (err) {
-  //           if (err) {console.log(`Error writing file to disk: ${err}`); res.status(500).send();}
-  //           console.log('dorm review updated successfully');
-  //           res.status(200).send();
-  //           return;
-  //         });
-  //       });
-  //     } else if (key == dorms["dorms"].length - 1) {
-  //       // res.status(404).send();
-  //       // return;
-  //     }
-  //   }
   // }
 
 });
