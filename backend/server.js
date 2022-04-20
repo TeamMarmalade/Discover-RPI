@@ -126,36 +126,24 @@ app.get('/dorms/:dorm', (req, res) => {
 app.get('/dorms/:dorm/reviews', (req, res) => {
   client.connect(err => {
     if (err) { throw err }
-    let reviews = client.db("DiscoverRPI").collection("reviews");
-    var displayReviews = {
-      "bar-h": 0,
-      "blitman": 0,
-      "barton": 0,
-      "bray": 0,
-      "cary": 0,
-      "crockett": 0,
-      "davison": 0,
-      "nason": 0,
-      "nugent": 0,
-      "sharp": 0,
-      "warren": 0,
-      "colonie": 0,
-      "rhaps": 0,
-      "e-complex": 0,
-      "north": 0,
-      "quad": 0,
-      "stackwyck": 0,
-      "bryckwyck": 0,
-      "city station south": 0,
-      "polytechnic": 0
-    };
-    if (!displayReviews.hasOwnProperty(req.params.dorm)) {
-      res.status(404).send("dorm not found");
-      return;
-    }
-    displayDorms[req.params.dorm] = 1;
-    res.status(200).send(reviews.findOne({}, displayReviews));
-    client.close();
+    let db = client.db("DiscoverRPI").collection("reviews");
+    db.findOne({_id : req.params.dorm }, function(err, re) {
+      delete re._id;
+      res.json(re);
+    });
+  });
+});
+
+app.get('/dorms/:dorm/reviews/:user', (req, res) => {
+  client.connect(err => {
+    if (err) { throw err }
+    let db = client.db("DiscoverRPI").collection("reviews");
+    let projection = {};
+    projection[req.params.user] = 1;
+    projection["_id"] = 0;
+    db.findOne({_id : req.params.dorm }, {projection}, function(err, re) {
+      res.json(re);
+    });
   });
 });
 
@@ -211,9 +199,8 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
       if (err) { res.status(500).send(); console.log(err); client.close(); return; } 
       let user = req.body.user;
       if (re.hasOwnProperty(user)) {
-        console.log("user " + user + " already has a review");
         // review already exists
-        res.status(400).send("This user already has a review for this dorm");
+        res.status(400).send("user " + user + " already has a review for this dorm");
       } else {
         // review does not exist
         // create review format
@@ -231,9 +218,37 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
 
 });
 
-app.delete('/dorms/reviews/:id', (req, res) => {
-  res.status(200).json({
-    "removed": true
+app.delete('/dorms/:dorm/reviews/:user', (req, res) => {
+  client.connect(err => {
+    if (err) { throw err }
+    let db = client.db("DiscoverRPI").collection("reviews");
+    let data = {};
+    data[req.params.user] = "";
+    db.updateOne({_id : req.params.dorm }, {$unset: data}, function(err, r) {
+      if (err) { res.status(500).send(); console.log(err); client.close(); return; }
+      res.status(200).json(r);  
+    });
+  });
+});
+
+app.delete('/dorms/:dorm/reviews/', (req, res) => {
+  client.connect(err => {
+    if (err) { throw err }
+    let db = client.db("DiscoverRPI").collection("reviews");
+    db.deleteOne({_id : req.params.dorm }, function(err, re) {
+      if (err) { res.status(500).send(); console.log(err); client.close(); return; }
+      if (!(re.deletedCount > 0)) {
+        res.status(400).send("Dorm not found");
+        client.close();
+        return;
+      }
+      let update = {};
+      update["_id"] = req.params.dorm;
+      db.insertOne({_id : req.params.dorm }, function(err, r) {
+        if (err) { res.status(500).send(); console.log(err); client.close(); return; }
+        res.status(200).send("All " + req.params.dorm + " reviews have been deleted.");
+      });
+    });
   });
 });
 
