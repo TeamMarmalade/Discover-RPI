@@ -38,7 +38,6 @@ export class DormPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, private auth: AuthService) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
-      this.currentUser = this.auth.googleIsLoggedIn();
     });
   }
 
@@ -56,6 +55,7 @@ export class DormPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
+    this.currentUser = this.auth.googleIsLoggedIn();
     if(this.dorm_name && this.dorm_name !== "") {
       this.http.get('/dorms').subscribe((data: any) => {
         data['dorms'].map((dorm: any) => {
