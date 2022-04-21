@@ -24,7 +24,9 @@ export class AuthService {
     this.auth.signOut();
   }
   googleIsLoggedIn() {
-    if(this.user) return true;
+    if(this.user) {
+      return true;
+    }
     return false;
   }
   googleGetUserDisplayName() {
@@ -32,8 +34,5 @@ export class AuthService {
   }
   googleGetUserUid() {
     return this.user.uid;
-  }
-  googleGetUsername() {
-    return this.user.username;
   }
 }

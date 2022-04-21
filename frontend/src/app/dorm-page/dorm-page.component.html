@@ -38,7 +38,7 @@
             <div class="d-flex flex-column align-items-center w-50 gap-2">
                 <textarea [(ngModel)]="currentReview"></textarea>
                 <div><input type="number" [(ngModel)]="currentStars" /></div>
-                <div><button (click)="submitReview()" [disabled]="!currentUser">Submit</button></div>
+                <div><button (click)="submitReview()" [disabled]="!auth.googleIsLoggedIn()">Submit</button></div>
             </div>
         </div>
         <ul class="no-b d-flex flex-column align-items-center">

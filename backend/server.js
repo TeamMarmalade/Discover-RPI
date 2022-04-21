@@ -156,7 +156,7 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
   //   "stars": 5,
   //   "upvotes": ["user1", "user2"]
   // }
-  if (!(Object.keys(req.body).length == 4 && req.body.hasOwnProperty("content") && req.body.hasOwnProperty("stars") && req.body.hasOwnProperty("upvotes")&& req.body.hasOwnProperty("user"))) {
+  if (!(Object.keys(req.body).length == 4 && req.body.hasOwnProperty("content") && req.body.hasOwnProperty("stars") && req.body.hasOwnProperty("upvotes") && req.body.hasOwnProperty("user"))) {
     res.status(400).send("Request body in wrong json format");
     return;
   }
