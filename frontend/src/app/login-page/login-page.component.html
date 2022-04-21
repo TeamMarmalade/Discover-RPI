@@ -3,8 +3,8 @@
         <img src="/assets/logo.png" alt="Discover RPI Logo" width="250" height="200">
 
         <form class="login-form" method="post" action="">
-            <div *ngIf="auth.user | async as user; else login">
-                <h3 id="welcome-user-text">Welcome {{ user.displayName }}!</h3>
+            <div *ngIf="authService.googleIsLoggedIn(); else login">
+                <h3 id="welcome-user-text">Welcome {{ authService.googleGetUserDisplayName() }}!</h3>
                 <input type="submit" name="google-logout-button" id="google-logout-button" value="Logout (Google)" (click)="authService.googleLogout()">
             </div>
             <ng-template #login>

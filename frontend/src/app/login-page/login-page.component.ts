@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { HttpService } from '../http.service';
 import { UserService } from '../user.service';
-import { AngularFireAuth } from '@angular/fire/compat/auth';
 import { AuthService } from '../auth.service';
 
 @Component({
@@ -18,8 +17,7 @@ export class LoginPageComponent implements OnInit {
     private http: HttpService,
     private user: UserService,
     private router: Router,
-    public authService: AuthService,
-    public auth: AngularFireAuth
+    public authService: AuthService
   ) { }
 
   ngOnInit(): void {
