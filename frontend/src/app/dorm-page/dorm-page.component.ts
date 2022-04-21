@@ -30,7 +30,7 @@ export class DormPageComponent implements OnInit {
     this.slides[this.slideIndex] = "block";
 
     this.slideIndex += 1;
-    if (this.slideIndex > 1) {
+    if (this.slideIndex > 2) {
       this.slideIndex = 0;
     }
   }
@@ -50,7 +50,7 @@ export class DormPageComponent implements OnInit {
 
     setInterval(() => {
       this.showSlides();
-    }, 6000);
+    }, 5000);
   }
 
 }

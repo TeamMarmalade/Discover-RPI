@@ -46,7 +46,8 @@
       "floors": 5,
       "image": [
         "/assets/dorm_images/barh.png",
-        "/assets/dorm_images/barh.png"
+        "/assets/dorm_images/barh_1.png",
+        "/assets/dorm_images/barh_2.png"
       ],
       "ratings": [
         1,
@@ -89,7 +90,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/blitman_1.png",
-        "/assets/dorm_images/blitman.png"
+        "/assets/dorm_images/blitman.png",
+        "/assets/dorm_images/blitman_2.png"
       ],
       "ratings": [
         1,
@@ -137,7 +139,8 @@
       "floors": 4,
       "image": [
         "/assets/dorm_images/barton.png",
-        "/assets/dorm_images/barton.png"
+        "/assets/dorm_images/barton_1.png",
+        "/assets/dorm_images/barton_2.png"
       ],
       "ratings": [
         1,
@@ -181,7 +184,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/bray.png",
-        "/assets/dorm_images/bray.png"
+        "/assets/dorm_images/bray_1.png",
+        "/assets/dorm_images/bray_2.png"
       ],
       "ratings": [
         1,
@@ -223,7 +227,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/cary.png",
-        "/assets/dorm_images/cary.png"
+        "/assets/dorm_images/cary_1.png",
+        "/assets/dorm_images/cary_2.png"
       ],
       "ratings": [
         1,
@@ -269,7 +274,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/crockett.png",
-        "/assets/dorm_images/crockett.png"
+        "/assets/dorm_images/crockett_1.png",
+        "/assets/dorm_images/crockett_2.png"
       ],
       "ratings": [
         1,
@@ -314,7 +320,8 @@
       "floors": 4,
       "image": [
         "/assets/dorm_images/davison.png",
-        "/assets/dorm_images/davison.png"
+        "/assets/dorm_images/davison_1.png",
+        "/assets/dorm_images/davison_2.png"
       ],
       "ratings": [
         1,
@@ -360,7 +367,8 @@
       "floors": 4,
       "image": [
         "/assets/dorm_images/nason.png",
-        "/assets/dorm_images/nason.png"
+        "/assets/dorm_images/nason_1.png",
+        "/assets/dorm_images/nason_2.png"
       ],
       "ratings": [
         1,
@@ -406,7 +414,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/nugent.png",
-        "/assets/dorm_images/nugent.png"
+        "/assets/dorm_images/nugent_1.png",
+        "/assets/dorm_images/nugent_2.png"
       ],
       "ratings": [
         1,
@@ -450,7 +459,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/sharp.png",
-        "/assets/dorm_images/sharp.png"
+        "/assets/dorm_images/sharp_1.png",
+        "/assets/dorm_images/sharp_2.png"
       ],
       "ratings": [
         1,
@@ -494,7 +504,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/warren.png",
-        "/assets/dorm_images/warren.png"
+        "/assets/dorm_images/warren_1.png",
+        "/assets/dorm_images/warren_2.png"
       ],
       "ratings": [
         1,
@@ -538,7 +549,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/colonie.png",
-        "/assets/dorm_images/colonie.png"
+        "/assets/dorm_images/colonie_1.png",
+        "/assets/dorm_images/colonie_2.png"
       ],
       "ratings": [
         1,
@@ -582,7 +594,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/rhaps.png",
-        "/assets/dorm_images/rhaps.png"
+        "/assets/dorm_images/rhaps_1.png",
+        "/assets/dorm_images/rhaps_2.png"
       ],
       "ratings": [
         1,
@@ -627,7 +640,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/e-complex.png",
-        "/assets/dorm_images/e-complex.png"
+        "/assets/dorm_images/e-complex_1.png",
+        "/assets/dorm_images/e-complex_2.png"
       ],
       "ratings": [
         1,
@@ -672,7 +686,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/north.png",
-        "/assets/dorm_images/north.png"
+        "/assets/dorm_images/north_1.png",
+        "/assets/dorm_images/northrh_2.png"
       ],
       "ratings": [
         1,
@@ -718,7 +733,9 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/quad.png",
-        "/assets/dorm_images/quad.png"
+        "/assets/dorm_images/quad_1.png",
+        "/assets/dorm_images/quad_2.png"
+
       ],
       "ratings": [
         1,
@@ -762,7 +779,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/stackwyck.png",
-        "/assets/dorm_images/stackwyck.png"
+        "/assets/dorm_images/stackwyck_1.png",
+        "/assets/dorm_images/stackwyck_2.png"
       ],
       "ratings": [
         1,
@@ -806,7 +824,8 @@
       "floors": 3,
       "image": [
         "/assets/dorm_images/brycwyck.png",
-        "/assets/dorm_images/brycwyck.png"
+        "/assets/dorm_images/brycwyck_1.png",
+        "/assets/dorm_images/brycwyck_2.png"
       ],
       "ratings": [
         1,
@@ -850,7 +869,8 @@
       "floors": 4,
       "image": [
         "/assets/dorm_images/c_south.png",
-        "/assets/dorm_images/c_south.png"
+        "/assets/dorm_images/c_south_1.png",
+        "/assets/dorm_images/c_south_2.png"
       ],
       "ratings": [
         1,
@@ -894,7 +914,8 @@
       "floors": 4,
       "image": [
         "/assets/dorm_images/poly.png",
-        "/assets/dorm_images/poly.png"
+        "/assets/dorm_images/poly_1.png",
+        "/assets/dorm_images/poly_2.png"
       ],
       "ratings": [
         1,
