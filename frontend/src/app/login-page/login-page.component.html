@@ -1,17 +1,25 @@
 <div class="login">
     <div>
-        <img src="/assets/logo.png" alt="JAM Logo" width="250" height="200">
+        <img src="/assets/logo.png" alt="Discover RPI Logo" width="250" height="200">
 
         <form class="login-form" method="post" action="">
-            <div>
-                <label for="input-username" class="required">Username</label>
-                <input type="text" name="input-username" id="input-username" required [(ngModel)]="username" />
+            <div *ngIf="authService.googleIsLoggedIn(); else login">
+                <h3 id="welcome-user-text">Welcome {{ authService.googleGetUserDisplayName() }}!</h3>
+                <input type="submit" name="google-logout-button" id="google-logout-button" value="Logout (Google)" (click)="authService.googleLogout()">
             </div>
-            <div>
-                <label for="input-password" class="required">Password</label>
-                <input type="password" name="input-password" id="input-password" required [(ngModel)]="password" />
-            </div>
-            <input type="submit" name="login-button" id="login-button" value="Login" (click)="login()" />
+            <ng-template #login>
+                <div>
+                    <label for="input-username" class="required">Username</label>
+                    <input type="text" name="input-username" id="input-username" required [(ngModel)]="username" />
+                </div>
+                <div>
+                    <label for="input-password" class="required">Password</label>
+                    <input type="password" name="input-password" id="input-password" required [(ngModel)]="password" />
+                </div>
+                <input type="submit" name="login-button" id="login-button" value="Login" (click)="loginRegular()" />
+
+                <input type="submit" name="google-login-button" id="google-login-button" value="Login with Google" (click)="authService.googleLogin()">
+            </ng-template>
         </form>
     </div>
 </div>
