@@ -3,6 +3,8 @@ import { HttpParams } from '@angular/common/http'
 import { Dorm } from 'src/dorm_interface';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
+import { AuthService } from '../auth.service';
+import { ASTWithName } from '@angular/compiler';
 
 @Component({
   selector: 'app-dorm-page',
@@ -30,8 +32,11 @@ export class DormPageComponent implements OnInit {
   img: string[] = [];
   slideIndex: number = 0;
   slides: string[] = ["none", "none", "none"]
+  currentReview: string = ""
+  currentStars: number = 0;
+  currentUser: boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router) {
+  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, public auth: AuthService) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
     });
@@ -94,6 +99,20 @@ export class DormPageComponent implements OnInit {
     });
 
     return count !== 0 ? Math.ceil(average / count).toString() : "0";
+  }
+
+  submitReview() {
+    if(this.currentReview !== "" && this.currentStars !== 0 && this.auth.googleIsLoggedIn()) {
+      this.http.post(`/dorms/${this.dorm_name}/reviews`, {
+        "user": this.auth.googleGetUserDisplayName(),
+        "content": this.currentReview,
+        "stars": this.currentStars,
+        "upvotes": []
+      }).subscribe((data) => {
+        console.log(data);
+        window.location.reload();
+      })
+    }
   }
 
 }

@@ -34,6 +34,13 @@
                 <h2 class="display-7 text-center">Reviews: ⭐ {{ getAverageRating() }}</h2>
             </div>
         </div>
+        <div class="d-flex flex-column align-items-center">
+            <div class="d-flex flex-column align-items-center w-50 gap-2">
+                <textarea [(ngModel)]="currentReview"></textarea>
+                <div><input type="number" [(ngModel)]="currentStars" /></div>
+                <div><button (click)="submitReview()" [disabled]="!auth.googleIsLoggedIn()">Submit</button></div>
+            </div>
+        </div>
         <ul class="no-b d-flex flex-column align-items-center">
             <li *ngFor="let review of dorm.reviews" class="border border-dark p-3 mt-5 w-75 rounded shadow py-4">
                 <div class="d-flex justify-content-between">
