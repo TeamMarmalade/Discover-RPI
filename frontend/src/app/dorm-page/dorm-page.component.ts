@@ -32,10 +32,13 @@ export class DormPageComponent implements OnInit {
   slideIndex: number = 0;
   slides: string[] = ["none", "none", "none"]
   currentReview: string = ""
+  currentStars: number = 0;
+  currentUser: boolean = false;
 
   constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, private auth: AuthService) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
+      this.currentUser = this.auth.googleIsLoggedIn();
     });
   }
 
@@ -99,11 +102,11 @@ export class DormPageComponent implements OnInit {
   }
 
   submitReview() {
-    if(this.currentReview !== "") {
+    if(this.currentReview !== "" && this.currentStars !== 0 && this.auth.googleIsLoggedIn()) {
       this.http.post(`/dorms/${this.dorm_name}/reviews`, {
-        "user": "test-user-4",
+        "user": this.auth.googleGetUsername(),
         "content": this.currentReview,
-        "stars": 4,
+        "stars": this.currentStars,
         "upvotes": []
       }).subscribe((data) => {
         console.log(data);
