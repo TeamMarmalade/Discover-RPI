@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/TeamMarmalade/Discover-RPI/issues"
   },
-  "homepage": "https://github.com/TeamMarmalade/Discover-RPI#readme"
+  "homepage": "https://github.com/TeamMarmalade/Discover-RPI#readme",
+  "dependencies": {
+    "firebase": "^9.6.11"
+  }
 }
