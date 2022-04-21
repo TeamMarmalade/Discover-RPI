@@ -10,7 +10,6 @@ app.use(bodyParser.json());
 
 // Mongo Implementation
 // mongodb+srv://user1:User123@cluster0.neiqy.mongodb.net/test
-var dorms;
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://user_x:TeamMarmalade@cluster0.neiqy.mongodb.net/Cluster0?retryWrites=true&w=majority";
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true, serverApi: ServerApiVersion.v1 });
@@ -34,59 +33,6 @@ client.connect(err => {
 // Load static
 app.use(express.static(__dirname + '/dist/frontend'));
 
-// sign-up and login
-// will eventually be google oath
-app.post('/login', (req, res) => {
-  // request expected: {"username": "user", "password": "password1"}
-  if (!(req.body.hasOwnProperty('username') && req.body.hasOwnProperty('password') && Object.keys(req.body).length == 2)) {
-    // request format is incorrect
-    // bad request: 400
-    res.status(400).send();
-  } else {
-    fs.readFile(__dirname + "/users.json", 'utf-8', function (err, data) {
-      if (err) { console.log(`Error reading file from disk: ${err}`); res.status(500).send(); }
-      users = JSON.parse(data);
-      users.push(req.body);
-      users = JSON.stringify(users);
-      console.log(users);
-
-      fs.writeFile(__dirname + "/users.json", users, 'utf-8', function (err) {
-        if (err) { console.log(`Error writing file to disk: ${err}`); res.status(500).send(); }
-        console.log('users updated successfully');
-      });
-    });
-    // success
-    res.status(200).send();
-  }
-});
-
-app.get('/login', (req, res) => {
-  //query strings exprected: ?uname=<name>&pass=<password>
-  if (req.query.hasOwnProperty("uname") && req.query.hasOwnProperty("pass") && Object.keys(req.query).length == 2) {
-    // looking for specific user
-    fs.readFile(__dirname + "/users.json", 'utf-8', function (err, data) {
-      if (err) { console.log(`Error reading file from disk: ${err}`); res.status(500).send(); }
-      let users = JSON.parse(data);
-      for (let i = 0; i < users.length; ++i) {
-        let user = users[i];
-        // console.log(user);
-        // console.log(req.query.uname)
-        if (user.username == req.query.uname && user.password == req.query.pass) {
-          // user found successfully
-          res.status(200).json({ "logged": true, "username": user.username });
-          return;
-        }
-      }
-      // incorrect credentials
-      // password incorrect or user not found
-      res.status(200).json({ "logged": false, "username": "" });
-    });
-  } else {
-    // bad request
-    res.status(400).send();
-  }
-});
-
 // server dorm route handler
 app.get('/dorms', (req, res) => {
   // var arr = [];
@@ -94,22 +40,34 @@ app.get('/dorms', (req, res) => {
   //   var dorm = dorms["dorms"][key];
   //   arr.push(dorm["name"]);
   // }
+  var dorms = [];
+  client.connect(err => {
+    if (err) throw err;
+    client.db("DiscoverRPI").collection("dorms").find({}).forEach((doc) => {
+      dorms.push(doc);
+    }).then(() => {
+      res.status(200).json({ "dorms": dorms });
+    });
+  });
 
-  res.status(200).json({ "dorms": dorms })
+  // res.status(500).json({ "message": "error" })
 });
 
 // server dorm item route handler
 app.get('/dorms/:dorm', (req, res) => {
+  var dorms = [];
   // can be called by either the common or official dorm name
   client.connect(err => {
     if (err) throw err;
-    dorms = client.db("DiscoverRPI").collection("dorms").find();
-    console.log(dorms);
+    client.db("DiscoverRPI").collection("dorms").find().forEach((doc) => {
+      dorms.push(doc);
+    });
     for (let i = 0; i < dorms.length; i++) {
       console.log(dorms[i]);
       var dorm = dorms[i];
       if (dorm.name.common === req.params.dorm || dorm.name.official === req.params.dorm) {
         res.status(200).json(dorm);
+        return;
       }
     }
   });
@@ -120,21 +78,29 @@ app.get('/dorms/:dorm', (req, res) => {
       res.status(200).json(dorm);
     }
   }*/
-  res.status(404).send();
+  
+  res.status(404).json({
+    message: "Dorm not found"
+  });
 });
 
 app.get('/dorms/:dorm/reviews', (req, res) => {
+  var dorms = [];
   client.connect(err => {
     if (err) { throw err }
-    let db = client.db("DiscoverRPI").collection("reviews");
-    db.findOne({_id : req.params.dorm }, function(err, re) {
+    client.db("DiscoverRPI").collection("reviews").findOne({_id : req.params.dorm }, function(err, re) {
       delete re._id;
-      res.json(re);
+      comments = [];
+      for(let i in re) {
+        comments.push({ name: i, review: re[i] });
+      }
+      res.status(200).json({ reviews: comments });
     });
   });
 });
 
 app.get('/dorms/:dorm/reviews/:user', (req, res) => {
+  var dorms = [];
   client.connect(err => {
     if (err) { throw err }
     let db = client.db("DiscoverRPI").collection("reviews");
@@ -142,12 +108,14 @@ app.get('/dorms/:dorm/reviews/:user', (req, res) => {
     projection[req.params.user] = 1;
     projection["_id"] = 0;
     db.findOne({_id : req.params.dorm }, {projection}, function(err, re) {
-      res.json(re);
+      delete re._id;
+      res.json({ reviews: [re] });
     });
   });
 });
 
 app.put('/dorms/:dorm/reviews/:user', (req, res) => {
+  var dorms = [];
   // request body:
   // {
   //   "content": "great dorm",
@@ -180,6 +148,7 @@ app.put('/dorms/:dorm/reviews/:user', (req, res) => {
 });
 
 app.post('/dorms/:dorm/reviews', (req, res) => {
+  var dorms = [];
   // request body:
   // {
   //   "user": "test-user",
@@ -200,7 +169,7 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
       let user = req.body.user;
       if (re.hasOwnProperty(user)) {
         // review already exists
-        res.status(400).send("user " + user + " already has a review for this dorm");
+        res.status(400).json({ "message": "user " + user + " already has a review for this dorm" });
       } else {
         // review does not exist
         // create review format
@@ -219,6 +188,7 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
 });
 
 app.delete('/dorms/:dorm/reviews/:user', (req, res) => {
+  var dorms = [];
   client.connect(err => {
     if (err) { throw err }
     let db = client.db("DiscoverRPI").collection("reviews");
@@ -232,6 +202,7 @@ app.delete('/dorms/:dorm/reviews/:user', (req, res) => {
 });
 
 app.delete('/dorms/:dorm/reviews/', (req, res) => {
+  var dorms = [];
   client.connect(err => {
     if (err) { throw err }
     let db = client.db("DiscoverRPI").collection("reviews");

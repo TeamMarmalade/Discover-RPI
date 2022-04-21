@@ -1,9 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pr-2">
-    <img class="logo" src="/assets/logo.png" alt="logo" />
+    <a class="logo" href="/"><img class="w-100 h-100" src="/assets/logo.png" alt="logo" /></a>
 
     <div class="mt-2 w-85 d-flex justify-content-end mr-5 pr-2">
         <ul class="no-b mr d-flex gap-4">
-            <li><a href="/">Home</a></li>
             <li><a href="/dashboard">Dashboard</a></li>
             <li *ngIf="current_user == ''"><a href="/login-page">Login</a></li>
             <li *ngIf="current_user !== ''"><a href="/logout">Logout</a></li>

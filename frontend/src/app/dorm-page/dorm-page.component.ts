@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpParams } from '@angular/common/http'
 import { Dorm } from 'src/dorm_interface';
-import { ActivatedRoute } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 
 @Component({
@@ -11,12 +11,27 @@ import { HttpService } from '../http.service';
 })
 export class DormPageComponent implements OnInit {
   dorm_name: string = "";
-  dorm: Dorm | null = null;
+  dorm: Dorm = {
+    address: "",
+    bathroom: "",
+    class: [""],
+    dining_hall: "",
+    floors: 0,
+    image: [""],
+    kitchen: "",
+    name: { common: "", official: "" },
+    price: 0,
+    ratings: [],
+    retrieved: false,
+    reviews: [],
+    room_types: [""],
+    shuttle_stop: false
+  };
   img: string[] = [];
   slideIndex: number = 0;
   slides: string[] = ["none", "none", "none"]
 
-  constructor(private route: ActivatedRoute, private http: HttpService) {
+  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
     });
@@ -36,21 +51,49 @@ export class DormPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.dorm_name !== "") {
+    if(this.dorm_name && this.dorm_name !== "") {
       this.http.get('/dorms').subscribe((data: any) => {
         data['dorms'].map((dorm: any) => {
           if(dorm.name.common == this.dorm_name) {
             this.dorm = dorm;
+            this.dorm.reviews = [];
             this.img = dorm['image'];
-            console.log(this.dorm);
+            
+            this.http.get(`/dorms/${dorm.name.common}/reviews`).subscribe((data: any) => {
+              data.reviews.map((review: any) => {
+                dorm.reviews.push({
+                  user: review.name,
+                  msg: review.review.content,
+                  stars: review.review.stars,
+                  upvotes: review.review.upvotes
+                })
+              });
+            });
           }
         });
+
+        console.log(this.dorm);
       });
+    }
+
+    else {
+      this.router.navigateByUrl('/dashboard');
     }
 
     setInterval(() => {
       this.showSlides();
     }, 6000);
+  }
+
+  getAverageRating(): string {
+    let average = 0;
+    let count = 0;
+    this.dorm.reviews.map((review) => {
+      average += review.stars;
+      count += 1;
+    });
+
+    return count !== 0 ? Math.ceil(average / count).toString() : "0";
   }
 
 }
