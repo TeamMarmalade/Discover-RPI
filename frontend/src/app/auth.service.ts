@@ -33,4 +33,7 @@ export class AuthService {
   googleGetUserUid() {
     return this.user.uid;
   }
+  googleGetUsername() {
+    return this.user.username;
+  }
 }
