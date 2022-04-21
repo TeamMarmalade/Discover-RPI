@@ -3,6 +3,7 @@ import { HttpParams } from '@angular/common/http'
 import { Dorm } from 'src/dorm_interface';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-dorm-page',
@@ -30,8 +31,9 @@ export class DormPageComponent implements OnInit {
   img: string[] = [];
   slideIndex: number = 0;
   slides: string[] = ["none", "none", "none"]
+  currentReview: string = ""
 
-  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router) {
+  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, private auth: AuthService) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
     });
@@ -94,6 +96,20 @@ export class DormPageComponent implements OnInit {
     });
 
     return count !== 0 ? Math.ceil(average / count).toString() : "0";
+  }
+
+  submitReview() {
+    if(this.currentReview !== "") {
+      this.http.post(`/dorms/${this.dorm_name}/reviews`, {
+        "user": "test-user-4",
+        "content": this.currentReview,
+        "stars": 4,
+        "upvotes": []
+      }).subscribe((data) => {
+        console.log(data);
+        window.location.reload();
+      })
+    }
   }
 
 }

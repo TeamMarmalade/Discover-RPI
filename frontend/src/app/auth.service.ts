@@ -12,7 +12,7 @@ export class AuthService {
   constructor(
     public auth: AngularFireAuth
   ) {
-    this.auth.authState.subscribe(authState => {
+    this.auth.authState.subscribe((authState) => {
       this.user = authState;
     })
    }

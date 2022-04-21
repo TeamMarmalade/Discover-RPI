@@ -34,6 +34,8 @@
                 <h2 class="display-7 text-center">Reviews: ⭐ {{ getAverageRating() }}</h2>
             </div>
         </div>
+        <textarea [(ngModel)]="currentReview"></textarea>
+        <button (click)="submitReview()" [disabled]="">Submit</button>
         <ul class="no-b d-flex flex-column align-items-center">
             <li *ngFor="let review of dorm.reviews" class="border border-dark p-3 mt-5 w-75 rounded shadow py-4">
                 <div class="d-flex justify-content-between">
