@@ -1,910 +1,482 @@
-{
-  "dorms": [
-    {
-      "name": {
-        "common": "bar-h",
-        "official": "Burdett Avenue Residence Hall"
-      },
-      "address": "2122 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "BarH",
-      "room_types": [
-        "single",
-        "double",
-        "triple",
-        "quad"
-      ],
-      "price": 3,
-      "shuttle_stop": true,
-      "class": [
-        "freshman",
-        "sophomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "floor",
-      "floors": 5,
-      "image": [
-        "/assets/dorm_images/barh.png",
-        "/assets/dorm_images/barh.png"
-      ],
-      "ratings": [
-        1,
-        4,
-        4.6,
-        2,
-        3
-      ]
+[
+  {
+    "name": {
+      "common": "bar-h",
+      "official": "Burdett Avenue Residence Hall"
     },
-    {
-      "name": {
-        "common": "blitman",
-        "official": "Blitman Commons"
-      },
-      "address": "1800 6th Ave, Troy, NY 12180",
-      "dining_hall": "Blitman",
-      "room_types": [
-        "single",
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": true,
-      "class": [
-        "sophomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/blitman_1.png",
-        "/assets/dorm_images/blitman.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        4.6,
-        2,
-        3,
-        1,
-        2,
-        2,
-        2,
-        2
-      ]
+    "address": "2122 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "BarH",
+    "room_types": [
+      "single",
+      "double",
+      "triple",
+      "quad"
+    ],
+    "price": 3,
+    "shuttle_stop": true,
+    "class": [
+      "freshman",
+      "sophomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "floor",
+    "floors": 5,
+    "image": [
+      "/assets/dorm_images/barh.png",
+      "/assets/dorm_images/barh.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "blitman",
+      "official": "Blitman Commons"
     },
-    {
-      "name": {
-        "common": "barton",
-        "official": "Barton Hall"
-      },
-      "address": "110 8th St, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single",
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "floor",
-      "floors": 4,
-      "image": [
-        "/assets/dorm_images/barton.png",
-        "/assets/dorm_images/barton.png"
-      ],
-      "ratings": [
-        1,
-        2,
-        3,
-        5,
-        3
-      ]
+    "address": "1800 6th Ave, Troy, NY 12180",
+    "dining_hall": "Blitman",
+    "room_types": [
+      "single",
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": true,
+    "class": [
+      "sophomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/blitman_1.png",
+      "/assets/dorm_images/blitman.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "barton",
+      "official": "Barton Hall"
     },
-    {
-      "name": {
-        "common": "bray",
-        "official": "Bray Hall"
-      },
-      "address": "Bray Hall, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single",
-        "double",
-        "triple"
-      ],
-      "price": 5,
-      "shuttle_stop": true,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/bray.png",
-        "/assets/dorm_images/bray.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        2
-      ]
+    "address": "110 8th St, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single",
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "floor",
+    "floors": 4,
+    "image": [
+      "/assets/dorm_images/barton.png",
+      "/assets/dorm_images/barton.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "bray",
+      "official": "Bray Hall"
     },
-    {
-      "name": {
-        "common": "cary",
-        "official": "Cary Hall"
-      },
-      "address": "1999 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single",
-        "double",
-        "triple"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/cary.png",
-        "/assets/dorm_images/cary.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2
-      ]
+    "address": "Bray Hall, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single",
+      "double",
+      "triple"
+    ],
+    "price": 5,
+    "shuttle_stop": true,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/bray.png",
+      "/assets/dorm_images/bray.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "cary",
+      "official": "Cary Hall"
     },
-    {
-      "name": {
-        "common": "crockett",
-        "official": "Crockett Hall"
-      },
-      "address": "2053-2077 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single",
-        "double",
-        "triple"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/crockett.png",
-        "/assets/dorm_images/crockett.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2
-      ]
+    "address": "1999 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single",
+      "double",
+      "triple"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/cary.png",
+      "/assets/dorm_images/cary.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "crockett",
+      "official": "Crockett Hall"
     },
-    {
-      "name": {
-        "common": "davison",
-        "official": "Davison Hall"
-      },
-      "address": "1999 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single",
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 4,
-      "image": [
-        "/assets/dorm_images/davison.png",
-        "/assets/dorm_images/davison.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        2,
-        2,
-        2,
-        2
-      ]
+    "address": "2053-2077 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single",
+      "double",
+      "triple"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/crockett.png",
+      "/assets/dorm_images/crockett.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "davison",
+      "official": "Davison Hall"
     },
-    {
-      "name": {
-        "common": "nason",
-        "official": "Nason Hall"
-      },
-      "address": "Nason Hall, Troy, NY 12180",
-      "dining_hall": true,
-      "room_types": [
-        "single",
-        "double",
-        "triple"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 4,
-      "image": [
-        "/assets/dorm_images/nason.png",
-        "/assets/dorm_images/nason.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        2,
-        3,
-        2,
-        3,
-        2
-      ]
+    "address": "1999 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single",
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 4,
+    "image": [
+      "/assets/dorm_images/davison.png",
+      "/assets/dorm_images/davison.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "nason",
+      "official": "Nason Hall"
     },
-    {
-      "name": {
-        "common": "nugent",
-        "official": "Nugent Hall"
-      },
-      "address": "Nugent Hall, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single",
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/nugent.png",
-        "/assets/dorm_images/nugent.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        2,
-        3,
-        2
-      ]
+    "address": "Nason Hall, Troy, NY 12180",
+    "dining_hall": true,
+    "room_types": [
+      "single",
+      "double",
+      "triple"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 4,
+    "image": [
+      "/assets/dorm_images/nason.png",
+      "/assets/dorm_images/nason.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "nugent",
+      "official": "Nugent Hall"
     },
-    {
-      "name": {
-        "common": "sharp",
-        "official": "Sharp Hall"
-      },
-      "address": "Sharp Hall, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "single"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "basement",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/sharp.png",
-        "/assets/dorm_images/sharp.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "Nugent Hall, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single",
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/nugent.png",
+      "/assets/dorm_images/nugent.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "sharp",
+      "official": "Sharp Hall"
     },
-    {
-      "name": {
-        "common": "warren",
-        "official": "Warren Hall"
-      },
-      "address": "1999 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "freshman"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/warren.png",
-        "/assets/dorm_images/warren.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "Sharp Hall, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "single"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "basement",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/sharp.png",
+      "/assets/dorm_images/sharp.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "warren",
+      "official": "Warren Hall"
     },
-    {
-      "name": {
-        "common": "colonie",
-        "official": "Colonie Apartments"
-      },
-      "address": "2358 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "Commons",
-      "room_types": [
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "sohpomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/colonie.png",
-        "/assets/dorm_images/colonie.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "1999 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "freshman"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/warren.png",
+      "/assets/dorm_images/warren.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "colonie",
+      "official": "Colonie Apartments"
     },
-    {
-      "name": {
-        "common": "rhaps",
-        "official": "Colvin and Albright Apartment"
-      },
-      "address": "2358 Burdett Ave, Troy, NY 12180",
-      "dining_hall": "BarH",
-      "room_types": [
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "sohpomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/rhaps.png",
-        "/assets/dorm_images/rhaps.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "2358 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "Commons",
+    "room_types": [
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "sohpomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/colonie.png",
+      "/assets/dorm_images/colonie.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "rhaps",
+      "official": "Colvin and Albright Apartment"
     },
-    {
-      "name": {
-        "common": "e-complex",
-        "official": "E-Complex"
-      },
-      "address": "Sage Ave, Troy, NY 12180",
-      "dining_hall": "None",
-      "room_types": [
-        "single",
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "sohpomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/e-complex.png",
-        "/assets/dorm_images/e-complex.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "2358 Burdett Ave, Troy, NY 12180",
+    "dining_hall": "BarH",
+    "room_types": [
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "sohpomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/rhaps.png",
+      "/assets/dorm_images/rhaps.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "e-complex",
+      "official": "E-Complex"
     },
-    {
-      "name": {
-        "common": "north",
-        "official": "North Hall"
-      },
-      "address": "North Hall, Troy, NY 12180",
-      "dining_hall": "None",
-      "room_types": [
-        "single",
-        "double"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "sohpomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/north.png",
-        "/assets/dorm_images/north.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "Sage Ave, Troy, NY 12180",
+    "dining_hall": "None",
+    "room_types": [
+      "single",
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "sohpomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/e-complex.png",
+      "/assets/dorm_images/e-complex.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "north",
+      "official": "North Hall"
     },
-    {
-      "name": {
-        "common": "quad",
-        "official": "Quadrangle Complex"
-      },
-      "address": "Quadrangle Complex, Troy, NY 12180",
-      "dining_hall": "RSDH",
-      "room_types": [
-        "single",
-        "double",
-        "triple"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "sohpomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "first floor",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/quad.png",
-        "/assets/dorm_images/quad.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "North Hall, Troy, NY 12180",
+    "dining_hall": "None",
+    "room_types": [
+      "single",
+      "double"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "sohpomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/north.png",
+      "/assets/dorm_images/north.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "quad",
+      "official": "Quadrangle Complex"
     },
-    {
-      "name": {
-        "common": "stackwyck",
-        "official": "Stacwyck Apartments"
-      },
-      "address": "Wiltsie Apartments, 40 Kellogg Dr, Troy, NY 12180",
-      "dining_hall": "None",
-      "room_types": [
-        "single"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "sohpomore"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "apartment",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/stackwyck.png",
-        "/assets/dorm_images/stackwyck.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "Quadrangle Complex, Troy, NY 12180",
+    "dining_hall": "RSDH",
+    "room_types": [
+      "single",
+      "double",
+      "triple"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "sohpomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "first floor",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/quad.png",
+      "/assets/dorm_images/quad.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "stackwyck",
+      "official": "Stacwyck Apartments"
     },
-    {
-      "name": {
-        "common": "bryckwyck",
-        "official": "Brycwyck Apartments"
-      },
-      "address": "285 Sunset Terrace, Troy, NY 12180",
-      "dining_hall": "None",
-      "room_types": [
-        "single"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "junior"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "apartment",
-      "floors": 3,
-      "image": [
-        "/assets/dorm_images/brycwyck.png",
-        "/assets/dorm_images/brycwyck.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        3,
-        4,
-        3,
-        2
-      ]
+    "address": "Wiltsie Apartments, 40 Kellogg Dr, Troy, NY 12180",
+    "dining_hall": "None",
+    "room_types": [
+      "single"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "sohpomore"
+    ],
+    "bathroom": 2,
+    "kitchen": "apartment",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/stackwyck.png",
+      "/assets/dorm_images/stackwyck.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "bryckwyck",
+      "official": "Brycwyck Apartments"
     },
-    {
-      "name": {
-        "common": "city station south",
-        "official": "City Station South Apartments"
-      },
-      "address": "124 Ferry St, Troy, NY 12180",
-      "dining_hall": "None",
-      "room_types": [
-        "single"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "junior"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "apartment",
-      "floors": 4,
-      "image": [
-        "/assets/dorm_images/c_south.png",
-        "/assets/dorm_images/c_south.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        2,
-        3,
-        3,
-        2
-      ]
+    "address": "285 Sunset Terrace, Troy, NY 12180",
+    "dining_hall": "None",
+    "room_types": [
+      "single"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "junior"
+    ],
+    "bathroom": 2,
+    "kitchen": "apartment",
+    "floors": 3,
+    "image": [
+      "/assets/dorm_images/brycwyck.png",
+      "/assets/dorm_images/brycwyck.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "city station south",
+      "official": "City Station South Apartments"
     },
-    {
-      "name": {
-        "common": "polytechnic",
-        "official": "Polytechnic Apartments"
-      },
-      "address": "386 Congress St, Troy, NY 12180",
-      "dining_hall": "None",
-      "room_types": [
-        "single"
-      ],
-      "price": 5,
-      "shuttle_stop": false,
-      "class": [
-        "junior"
-      ],
-      "bathroom": 2,
-      "reviews": [
-        {
-          "user": "user",
-          "msg": "great experience living at the dorm",
-          "stars": 4
-        },
-        {
-          "user": "user2",
-          "msg": "did not enjoy living at the dorm",
-          "stars": 2
-        }
-      ],
-      "kitchen": "apartment",
-      "floors": 4,
-      "image": [
-        "/assets/dorm_images/poly.png",
-        "/assets/dorm_images/poly.png"
-      ],
-      "ratings": [
-        1,
-        1,
-        1,
-        2,
-        3,
-        3,
-        2
-      ]
-    }
-  ]
-}
+    "address": "124 Ferry St, Troy, NY 12180",
+    "dining_hall": "None",
+    "room_types": [
+      "single"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "junior"
+    ],
+    "bathroom": 2,
+    "kitchen": "apartment",
+    "floors": 4,
+    "image": [
+      "/assets/dorm_images/c_south.png",
+      "/assets/dorm_images/c_south.png"
+    ]
+  },
+  {
+    "name": {
+      "common": "polytechnic",
+      "official": "Polytechnic Apartments"
+    },
+    "address": "386 Congress St, Troy, NY 12180",
+    "dining_hall": "None",
+    "room_types": [
+      "single"
+    ],
+    "price": 5,
+    "shuttle_stop": false,
+    "class": [
+      "junior"
+    ],
+    "bathroom": 2,
+    "kitchen": "apartment",
+    "floors": 4,
+    "image": [
+      "/assets/dorm_images/poly.png",
+      "/assets/dorm_images/poly.png"
+    ]
+  }
+]

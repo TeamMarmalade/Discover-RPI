@@ -18,6 +18,7 @@ export interface Dorm {
     reviews: {
         user: string,
         msg: string,
-        stars: number
+        stars: number,
+        upvotes: string[]
     }[]
 }

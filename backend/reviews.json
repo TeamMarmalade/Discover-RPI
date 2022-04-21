@@ -1,0 +1,122 @@
+[
+  {
+    "bar-h": [
+      {
+        "user": "user",
+        "content": "great dorm",
+        "stars": 5,
+        "upvotes": 3
+      },
+      {
+        "user": "user2",
+        "content": "great dorm",
+        "stars": 5,
+        "upvotes": 4
+      },
+      {
+        "user": "user3",
+        "content": "great dorm",
+        "stars": 5,
+        "upvotes": 2
+      },
+      {
+        "user": "user4",
+        "content": "great dorm",
+        "stars": 5,
+        "upvotes": 1
+      },
+      {
+        "user": "user5",
+        "content": "bad dorm",
+        "stars": 1,
+        "upvotes": 20
+      }
+    ],
+    "blitman": [
+      {
+        "user": "user guy",
+        "content": "bad dorm",
+        "stars": 1,
+        "upvotes": 1
+      },
+      {
+        "user": "me",
+        "content": "bad dorm",
+        "stars": 1,
+        "upvotes": 9
+      },
+      {
+        "user": "legend27",
+        "content": "bad dorm",
+        "stars": 1,
+        "upvotes": 2
+      },
+      {
+        "user": "name of ",
+        "content": "bad dorm",
+        "stars": 1,
+        "upvotes": 0
+      },
+      {
+        "user": "user2",
+        "content": "good dorm",
+        "stars": 1,
+        "upvotes": 1
+      }
+    ],
+    "barton": [
+
+    ],
+    "bray": [
+
+    ],
+    "cary": [
+
+    ],
+    "crockett": [
+
+    ],
+    "davison": [
+
+    ],
+    "nason": [
+
+    ],
+    "nugent": [
+
+    ],
+    "sharp": [
+
+    ],
+    "warren": [
+
+    ],
+    "colonie": [
+
+    ],
+    "rhaps": [
+
+    ],
+    "e-complex": [
+
+    ],
+    "north": [
+
+    ],
+    "quad": [
+
+    ],
+    "stackwyck": [
+
+    ],
+    "bryckwyck": [
+
+    ],
+    "city station south": [
+
+    ],
+    "polytechnic": [
+      
+    ]
+  }
+]
