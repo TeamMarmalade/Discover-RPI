@@ -4,6 +4,7 @@ import { Dorm } from 'src/dorm_interface';
 import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 import { AuthService } from '../auth.service';
+import * as d3 from 'd3';
 
 @Component({
   selector: 'app-dorm-page',
@@ -38,12 +39,11 @@ export class DormPageComponent implements OnInit {
   constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, private auth: AuthService) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
-      this.currentUser = this.auth.googleIsLoggedIn();
     });
   }
 
   showSlides() {
-    for(let i = 0; i < 3; i++) {
+    for (let i = 0; i < 3; i++) {
       this.slides[i] = "none";
     }
 
@@ -56,23 +56,34 @@ export class DormPageComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if(this.dorm_name && this.dorm_name !== "") {
+    this.currentUser = this.auth.googleIsLoggedIn();
+    if (this.dorm_name && this.dorm_name !== "") {
       this.http.get('/dorms').subscribe((data: any) => {
         data['dorms'].map((dorm: any) => {
-          if(dorm.name.common == this.dorm_name) {
+          if (dorm.name.common == this.dorm_name) {
             this.dorm = dorm;
             this.dorm.reviews = [];
             this.img = dorm['image'];
-            
+
             this.http.get(`/dorms/${dorm.name.common}/reviews`).subscribe((data: any) => {
+              let freq = [0, 0, 0, 0, 0];
+              let index = [1, 2, 3, 4, 5];
               data.reviews.map((review: any) => {
                 dorm.reviews.push({
                   user: review.name,
                   msg: review.review.content,
                   stars: review.review.stars,
                   upvotes: review.review.upvotes
-                })
+                });
+
+                freq[review.review.stars - 1] += 1;
               });
+
+              let key = d3.select("article").append("div");
+              key.selectAll("div").data(index).join("div").text((d) => `⭐ ${d}`).style("display", "flex").style("align-items", "center").style("justify-content", "flex-end").style("min-height", "30px").style("max-height", "30px").style("font-size", "14px").style("margin-left", "15px").style("margin-bottom", "7px");
+
+              let span = d3.select("span").append("main");
+              span.selectAll("main").data(freq).join("span").style("display", "flex").style("align-items", "center").style("justify-content", "flex-end").style("min-width", "25px").style("width", (d) => `${d * 150}px`).style("height", "30px").style("background-color", "gold").style("margin", "5px").append("p").text((d) => d).style("color", "black").style("text-align", "right").style("padding", "3px").style("padding-top", "15px").lower();
             });
           }
         });
@@ -102,7 +113,7 @@ export class DormPageComponent implements OnInit {
   }
 
   submitReview() {
-    if(this.currentReview !== "" && this.currentReview.length <= 200 && parseInt(this.currentStars) !== 0 && this.auth.googleIsLoggedIn()) {
+    if (this.currentReview !== "" && this.currentReview.length <= 200 && parseInt(this.currentStars) !== 0 && this.auth.googleIsLoggedIn()) {
       this.http.post(`/dorms/${this.dorm_name}/reviews`, {
         "user": this.auth.googleGetUsername(),
         "content": this.currentReview,
