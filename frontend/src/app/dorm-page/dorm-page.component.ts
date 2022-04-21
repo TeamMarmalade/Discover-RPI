@@ -32,7 +32,7 @@ export class DormPageComponent implements OnInit {
   slideIndex: number = 0;
   slides: string[] = ["none", "none", "none"]
   currentReview: string = ""
-  currentStars: number = 0;
+  currentStars: string = "1";
   currentUser: boolean = false;
 
   constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, private auth: AuthService) {
@@ -102,11 +102,11 @@ export class DormPageComponent implements OnInit {
   }
 
   submitReview() {
-    if(this.currentReview !== "" && this.currentStars !== 0 && this.auth.googleIsLoggedIn()) {
+    if(this.currentReview !== "" && this.currentReview.length <= 200 && parseInt(this.currentStars) !== 0 && this.auth.googleIsLoggedIn()) {
       this.http.post(`/dorms/${this.dorm_name}/reviews`, {
         "user": this.auth.googleGetUsername(),
         "content": this.currentReview,
-        "stars": this.currentStars,
+        "stars": parseInt(this.currentStars),
         "upvotes": []
       }).subscribe((data) => {
         console.log(data);
