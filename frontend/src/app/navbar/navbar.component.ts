@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
+import { AuthService } from '../auth.service';
 
 @Component({
   selector: 'app-navbar',
@@ -9,7 +10,7 @@ import { UserService } from '../user.service';
 export class NavbarComponent implements OnInit {
   current_user: string = ""
 
-  constructor(private user: UserService) { }
+  constructor(private user: UserService, public auth: AuthService) { }
 
   ngOnInit(): void {
     this.user.getUserObservable().subscribe((user) => {

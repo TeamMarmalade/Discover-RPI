@@ -1,12 +1,13 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light pt-2 pr-2">
-    <img class="logo" src="/assets/logo.png" alt="logo" />
+    <div class="d-flex w-100 justify-content-between align-items-center">
+        <a href="/" id="navbar-home"><img class="logo" src="/assets/logo.png" alt="logo" href="/"/></a>
 
-    <div class="mt-2 w-85 d-flex justify-content-end mr-5 pr-2">
-        <ul class="no-b mr d-flex gap-4">
-            <li><a href="/">Home</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li *ngIf="current_user == ''"><a href="/login-page">Login</a></li>
-            <li *ngIf="current_user !== ''"><a href="/logout">Logout</a></li>
-        </ul>
+        <div class="mt-2 w-85 d-flex justify-content-end mr-5 p-2">
+            <ul class="no-b mr d-flex gap-4">
+                <li><a href="/dashboard">Dashboard</a></li>
+                <li *ngIf="!auth.googleIsLoggedIn(); else logout"><a href="/login-page">Login</a></li>
+                <ng-template #logout><a href="/login-page">Logout</a></ng-template>
+            </ul>
+        </div>
     </div>
 </nav>
