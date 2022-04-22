@@ -1,0 +1,15 @@
+<div class="m-2">
+  <div *ngIf="selected == false" class="d-flex gap-1 align-items-center">
+    <p>{{ reviews.upvotes.length }}</p>
+    <button (click)="submit()">
+      <img src="/assets/upvote.svg" class="upvote" />
+    </button>
+  </div>
+
+  <div *ngIf="selected == true" class="d-flex gap-1 align-items-center">
+    <p>{{ reviews.upvotes.length }}</p>
+    <button (click)="submit()">
+      <img src="/assets/upvote-filled.svg" class="upvote" />
+    </button>
+  </div>
+</div>

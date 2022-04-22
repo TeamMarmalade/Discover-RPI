@@ -16,4 +16,12 @@ export class HttpService {
   post(url: string, body: {}) {
     return this.http.post(url, body);
   }
+
+  put(url: string, body: {}) {
+    return this.http.put(url, body);
+  }
+
+  delete(url: string) {
+    return this.http.delete(url);
+  }
 }

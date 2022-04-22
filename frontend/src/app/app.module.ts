@@ -14,6 +14,7 @@ import { LogoutComponent } from './logout/logout.component';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFireAuthModule } from '@angular/fire/compat/auth';
 import { environment } from 'src/environments/environment';
+import { UpvotesComponent } from './upvotes/upvotes.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { environment } from 'src/environments/environment';
     DashboardComponent,
     DormPageComponent,
     NavbarComponent,
-    LogoutComponent
+    LogoutComponent,
+    UpvotesComponent
   ],
   imports: [
     BrowserModule,
