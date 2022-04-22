@@ -52,7 +52,7 @@ export class HomePageComponent implements OnInit {
       span.selectAll("main").data(this.reviews).join("span").style("min-height", "25px").style("height", (d) => `${d.review * 80}px`).style("width", "50px").style("background-color", "gold").style("margin", "5px").append("p").text((d) => d.review).style("color", "black").style("text-align", "center").lower();
 
       let key = d3.select("article").append("span").style("display", "flex").style("justify-content", "center");
-      key.selectAll("span").data(this.reviews).join("span").text((d) => `${d.name}`).style("min-width", "50px").style("max-width", "50px").style("font-size", "10px").style("text-align", "center").style("margin", "5px");
+      key.selectAll("span").data(this.reviews).join("span").text((d: any) => `${d.name}`).style("min-width", "50px").style("max-width", "50px").style("font-size", "10px").style("text-align", "center").style("margin", "5px");
     }, 3000);
   }
 

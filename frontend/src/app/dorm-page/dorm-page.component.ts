@@ -81,10 +81,10 @@ export class DormPageComponent implements OnInit {
               });
 
               let key = d3.select("article").append("div");
-              key.selectAll("div").data(index).join("div").text((d) => `⭐ ${d}`).style("display", "flex").style("align-items", "center").style("justify-content", "flex-end").style("min-height", "30px").style("max-height", "30px").style("font-size", "14px").style("margin-left", "15px").style("margin-bottom", "7px");
+              key.selectAll("div").data(index).join("div").text((d: any) => `⭐ ${d}`).style("display", "flex").style("align-items", "center").style("justify-content", "flex-end").style("min-height", "30px").style("max-height", "30px").style("font-size", "14px").style("margin-left", "15px").style("margin-bottom", "7px");
 
               let span = d3.select("span").append("main");
-              span.selectAll("main").data(freq).join("span").style("display", "flex").style("align-items", "center").style("justify-content", "flex-end").style("min-width", "25px").style("width", (d) => `${d * 150}px`).style("height", "30px").style("background-color", "gold").style("margin", "5px").append("p").text((d) => d).style("color", "black").style("text-align", "right").style("padding", "3px").style("padding-top", "15px").lower();
+              span.selectAll("main").data(freq).join("span").style("display", "flex").style("align-items", "center").style("justify-content", "flex-end").style("min-width", "25px").style("width", (d: any) => `${d * 150}px`).style("height", "30px").style("background-color", "gold").style("margin", "5px").append("p").text((d: any) => d).style("color", "black").style("text-align", "right").style("padding", "3px").style("padding-top", "15px").lower();
             });
           }
         });
