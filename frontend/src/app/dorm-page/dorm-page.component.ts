@@ -5,6 +5,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { HttpService } from '../http.service';
 import { AuthService } from '../auth.service';
 import * as d3 from 'd3';
+import { ASTWithName } from '@angular/compiler';
 
 @Component({
   selector: 'app-dorm-page',
@@ -36,7 +37,7 @@ export class DormPageComponent implements OnInit {
   currentStars: string = "1";
   currentUser: boolean = false;
 
-  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, private auth: AuthService) {
+  constructor(private route: ActivatedRoute, private http: HttpService, private router: Router, public auth: AuthService) {
     this.route.queryParams.subscribe(params => {
       this.dorm_name = params['dorm'];
     });
@@ -115,7 +116,7 @@ export class DormPageComponent implements OnInit {
   submitReview() {
     if (this.currentReview !== "" && this.currentReview.length <= 200 && parseInt(this.currentStars) !== 0 && this.auth.googleIsLoggedIn()) {
       this.http.post(`/dorms/${this.dorm_name}/reviews`, {
-        "user": this.auth.googleGetUsername(),
+        "user": this.auth.googleGetUserDisplayName(),
         "content": this.currentReview,
         "stars": parseInt(this.currentStars),
         "upvotes": []
