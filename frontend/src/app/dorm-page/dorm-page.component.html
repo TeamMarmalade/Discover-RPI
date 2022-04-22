@@ -1,16 +1,6 @@
 <div *ngIf="dorm != null" class="">
     <h1 class="text-center mt-4 display-4">{{ dorm.name.official }}</h1>
     <div class="slideshow d-flex justify-content-center mt-5 mb-4">
-        <!--<div class="slide">
-            <h1 class="slide-number">
-                <img [src]="img[0]"  alt="Avatar" style="width:728px;height:600px;">
-            </h1>
-        </div>
-        <div class="slide">
-            <h1 class="slide-number">
-                <img [src]="img[1]"  alt="Avatar" style="width:728px;height:600px;">
-            </h1>
-        </div>-->
         <div class="fade" [ngStyle]="{ 'display': slides[0] }">
             <img [src]="img[0]" class="slides shadow">
         </div>

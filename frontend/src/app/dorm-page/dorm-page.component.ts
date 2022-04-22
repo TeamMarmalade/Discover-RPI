@@ -50,7 +50,7 @@ export class DormPageComponent implements OnInit {
 
     setInterval(() => {
       this.showSlides();
-    }, 5000);
+    }, 1500);
   }
 
 }
