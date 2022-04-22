@@ -11,21 +11,18 @@ export class UpvotesComponent implements OnInit {
   @Input() dorm_name: string = "";
   @Input() reviews: any = {};
   selected: boolean = false;
-  currentUser: string = "test-user";
 
   constructor(private http: HttpService, private auth: AuthService) { }
 
   ngOnInit(): void {
-    if(this.auth.googleIsLoggedIn()) {
-      this.currentUser = this.auth.googleGetUserDisplayName();
-    }
   }
 
   submit() {
     if (this.auth.googleIsLoggedIn()) {
+      var currentUser = this.auth.googleGetUserDisplayName();
       this.selected = !this.selected;
-      if (this.containsUser(this.currentUser) && this.selected == false) {
-        this.reviews.upvotes.splice(this.reviews.upvotes.indexOf(this.currentUser));
+      if (this.containsUser(currentUser) && this.selected == false) {
+        this.reviews.upvotes.splice(this.reviews.upvotes.indexOf(currentUser));
         console.log(this.reviews);
         // this.http.put(`/dorms/${this.dorm_name}/reviews/${currentUser}`, {
         //   "content": this.reviews.msg,
@@ -36,8 +33,8 @@ export class UpvotesComponent implements OnInit {
         // });
       }
 
-      else if (!this.containsUser(this.currentUser) && this.selected == true) {
-        this.reviews.upvotes.push(this.currentUser);
+      else if (!this.containsUser(currentUser) && this.selected == true) {
+        this.reviews.upvotes.push(currentUser);
         console.log(this.reviews);
         // this.http.put(`/dorms/${this.dorm_name}/reviews/${currentUser}`, {
         //   "content": this.reviews.msg,
