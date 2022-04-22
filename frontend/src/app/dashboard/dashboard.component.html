@@ -1,4 +1,4 @@
-<ul id="dorms">
+<ul id="dorms" class="p-2">
     <li *ngFor="let dorm of dorms" class="pointer">
         <div class="w-100 my-4 dorm d-flex justify-content-between" *ngIf="dorm.retrieved"
             (click)="navigate(dorm.name.common)">

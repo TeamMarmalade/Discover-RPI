@@ -28,20 +28,42 @@
         </div>
     </div>
     <hr>
-    <div class="reviews p-2">
-        <div class="no-b d-flex flex-column align-items-center">
-            <div class="w-75 p-3">
-                <h2 class="display-7 text-center">Reviews: ⭐ {{ getAverageRating() }}</h2>
+    <div class="reviews p-3">
+        <div class="m-1">
+            <div class="no-b d-flex flex-column">
+                <div class="w-50 p-3">
+                    <h2 class="display-7">Reviews: ⭐ {{ getAverageRating() }}</h2>
+                </div>
+            </div>
+            <div>
+                <div class="d-flex">
+                    <article class="d-flex justify-content-center"></article>
+                    <span></span>
+                </div>
+            </div>
+            <div class="d-flex flex-column p-3">
+                <div class="d-flex flex-column p-1 w-75 gap-2">
+                    <div class="form-group">
+                        <label class="h6">Review: </label>
+                        <textarea maxlength="200" class="form-control" [(ngModel)]="currentReview" rows="8"></textarea>
+                    </div>
+                    <div class="form-group d-flex gap-2">
+                        <label class="mt-2 h6">Stars: </label>
+                        <select class="form-control w-5" [(ngModel)]="currentStars">
+                            <option selected value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </div>
+                    <div class="d-flex justify-content-end">
+                        <button class="btn btn-primary px-4" (click)="submitReview()" [disabled]="!auth.googleIsLoggedIn()">Submit</button>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class="d-flex flex-column align-items-center">
-            <div class="d-flex flex-column align-items-center w-50 gap-2">
-                <textarea [(ngModel)]="currentReview"></textarea>
-                <div><input type="number" [(ngModel)]="currentStars" /></div>
-                <div><button (click)="submitReview()" [disabled]="!auth.googleIsLoggedIn()">Submit</button></div>
-            </div>
-        </div>
-        <ul class="no-b d-flex flex-column align-items-center">
+        <ul class="no-b d-flex flex-column align-items-lg-start align-items-center">
             <li *ngFor="let review of dorm.reviews" class="border border-dark p-3 mt-5 w-75 rounded shadow py-4">
                 <div class="d-flex justify-content-between">
                     <p class="h3">{{ review.user }}:</p>
