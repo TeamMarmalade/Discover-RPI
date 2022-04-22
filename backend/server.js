@@ -126,6 +126,7 @@ app.put('/dorms/:dorm/reviews/:user', (req, res) => {
     res.status(400).send("Request body in wrong json format");
     return;
   }
+
   client.connect(err => {
     if (err) { throw err }
     let db = client.db("DiscoverRPI").collection("reviews");
@@ -134,7 +135,7 @@ app.put('/dorms/:dorm/reviews/:user', (req, res) => {
       let user = req.params.user;
       if (re.hasOwnProperty(user)) {
         // review exists
-        db.updateOne({_id : req.params.dorm }, {$set: {user: req.body}}, function(err, r) {
+        db.updateOne({_id : req.params.dorm }, {$set: {user: req.params.user }}, function(err, r) {
           if (err) { res.status(500).send(); console.log(err); client.close(); return; }
           res.status(200).json(r);
         });
@@ -156,7 +157,7 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
   //   "stars": 5,
   //   "upvotes": ["user1", "user2"]
   // }
-  if (!(Object.keys(req.body).length == 4 && req.body.hasOwnProperty("content") && req.body.hasOwnProperty("stars") && req.body.hasOwnProperty("upvotes") && req.body.hasOwnProperty("user"))) {
+  if (!(Object.keys(req.body).length == 4 && req.body.hasOwnProperty("content") && req.body.hasOwnProperty("stars") && req.body.hasOwnProperty("upvotes")&& req.body.hasOwnProperty("user"))) {
     res.status(400).send("Request body in wrong json format");
     return;
   }
