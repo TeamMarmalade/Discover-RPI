@@ -4,6 +4,7 @@
 3. Import ```dorms.json``` (from the repository) into the "dorms" collection using the web interface.
 4. Create a "reviews" collection.
 5. Import ```reviews.json``` (from the repository) into the "reviews" collection using the web interface.
+6. In ```backend/server.js``` change the `uri` variable to the one provided by Mongo Atlas. 
 
 # Installing the App
 1. Clone the repository (using ```git clone```)
