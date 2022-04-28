@@ -170,7 +170,7 @@ app.post('/dorms/:dorm/reviews', (req, res) => {
       let user = req.body.user;
       if (re.hasOwnProperty(user)) {
         // review already exists
-        res.status(400).json({ "message": "user " + user + " already has a review for this dorm" });
+        res.status(400).json({ "message": "user already has a review for this dorm" });
       } else {
         // review does not exist
         // create review format
@@ -228,14 +228,6 @@ app.delete('/dorms/:dorm/reviews/', (req, res) => {
 app.get('/*', function (req, res) {
   res.sendFile(__dirname + '/dist/frontend/index.html');
 });
-
-// app.get('/dorms/:dormname', function(req, res) {
-
-// });
-
-// app.get('/dorms/:dormname/reviews', function(req, res) {
-
-// });
 
 // start server
 http.listen(3000, function () {
